@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <link rel="stylesheet" href="http://localhost:9090/webjars/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css"/>
+</head>
+<body>
+<div class="container">
+    <form th:action="@{/list-of-users}" method="post" th:object="${user}">
+        <input type="hidden" th:field="*{id}" th:value="${user.id}">
+        <input type="hidden" th:field="*{password}" th:value="${user.password}">
+        <div>
+            <label>
+                First Name:
+                <input type="text" th:field="*{firstName}" th:value="${user.firstName}">
+            </label>
+        </div>
+        <div>
+            <label>
+                Last Name:
+                <input type="text" th:field="*{lastName}" th:value="${user.lastName}">
+            </label>
+        </div>
+        <div>
+            <label>
+                Mobile:
+                <input type="text" th:field="*{mobileNumber}" th:value="${user.mobileNumber}">
+            </label>
+        </div>
+        <div>
+            <label>
+                Email:
+                <input type="text" th:field="*{email}" th:value="${user.email}">
+            </label>
+        </div>
+        <div>
+            <label>
+                Age:
+                <input type="text" th:field="*{age}" th:value="${user.age}">
+            </label>
+        </div>
+        <div>
+            <label>Sexes:
+                <input type="checkbox" name="sexes"
+                       th:each="sex : ${T(com.teachmeskills.visaction.model.Sex).values()}"
+                       th:text="${sex}"
+                       th:value="${sex.name}"
+                       th:field="*{sexes}"
+                />
+            </label>
+        </div>
+        <div>
+            <label>Roles:
+                <input type="checkbox" name="roles" th:checked="${user.roles.contains(role)}"
+                       th:each="role : ${roles}"
+                       th:text="${role}"
+                       th:value="${role.name}"
+                       th:field="*{roles}"
+                />
+            </label>
+        </div>
+        <div>
+            <label>isActive:
+                <input type="checkbox" th:field="*{active}" th:checked="${user.active}"/>
+            </label>
+        </div>
+
+        <button type="submit">Edit</button>
+    </form>
+</div>
+
+</body>
+</html>

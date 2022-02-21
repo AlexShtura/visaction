@@ -1,0 +1,108 @@
+<!doctype html>
+<html class="no-js" xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <div th:replace="fragments/header :: header-files"></div>
+</head>
+<body>
+<!-- header start -->
+<header id="sticky-header" class="header-fixed">
+    <div class="header-area">
+        <div class="container sm-100">
+            <div class="row">
+                <div class="col-md-1 col-sm-2">
+                    <div class="logo text-upper">
+                        <li><h4><a th:href="@{/index}">VISACTION</a></h4></li>
+                    </div>
+                </div>
+
+                <div class="col-md-11 col-sm-10">
+                    <div class="menu-area hidden-xs">
+                        <div class="hamburger hamburger--collapse">
+                            <div class="hamburger-box">
+                                <div class="hamburger-inner"></div>
+                            </div>
+                        </div>
+                        <nav class="hamburger-menu">
+                            <div th:replace="fragments/menu :: menu"></div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- header end -->
+
+
+<!-- basic-slider start -->
+<div class="basic-slider height-100-vh bg" style="background-image: url(img/slider/slide-white.jpg)">
+    <div class="container">
+        <div class="hero-caption">
+            <div class="slider-content hero-text text-center">
+                <h2>fantastic.</h2>
+                <p>Visual designer & Front-end developer</p>
+                <a class="btn" th:href="@{/about}">About Us</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- basic-slider end -->
+<!-- basic-service-area start -->
+<div class="basic-service-area black-bg pt-120 pb-165">
+    <div class="container">
+        <div class="area-title white-text text-center">
+            <h2>Our Services</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi tempora veritatis nemo aut ea iusto eos
+                est expedita,
+                quas ab adipisci.</p>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-6 mb-40">
+                <div class="service-box">
+                    <div class="service-icon">
+                        <span class="icon-pencil"></span>
+                    </div>
+                    <div class="service-content">
+                        <h3>Designs & interfaces</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipi sunt nisi id magni digni ssimos rem semsila
+                            eaque, rem and i will give you
+                            awesome platform.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-40">
+                <div class="service-box">
+                    <div class="service-icon">
+                        <span class="icon-gears"></span>
+                    </div>
+                    <div class="service-content">
+                        <h3>Highly customizable</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipi sunt nisi id magni digni ssimos rem semsila
+                            eaque, rem and i will give you
+                            awesome platform.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-40">
+                <div class="service-box">
+                    <div class="service-icon">
+                        <span class="icon-mobile"></span>
+                    </div>
+                    <div class="service-content">
+                        <h3>Responsive design</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipi sunt nisi id magni digni ssimos rem semsila
+                            eaque, rem and i will give you awesome platform.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- footer start -->
+<div th:replace="fragments/footer :: footer"></div>
+<!-- footer end -->
+
+</body>
+</html>

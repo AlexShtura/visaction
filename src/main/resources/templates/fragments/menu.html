@@ -1,0 +1,61 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+      lang="en">
+<head>
+</head>
+<body>
+<div th:fragment="menu">
+    <ul class="basic-menu clearfix">
+        <li><a href="#">Europe</a>
+            <ul>
+                <li><a href="#">Italy and Holy See</a></li>
+                <li><a href="#">Spain</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Asia</a>
+            <ul>
+                <li><a href="#">Vietnam</a></li>
+                <li><a href="#">India</a></li>
+            </ul>
+        </li>
+        <li><a href="#">America</a>
+            <ul>
+                <li><a href="#">Canada</a></li>
+                <li><a href="#">USA</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Africa</a>
+            <ul>
+                <li><a href="#">Egypt</a></li>
+                <li><a href="#">Morocco</a></li>
+                <li><a href="#">South Africa</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Oceania</a>
+            <ul>
+                <li><a href="#">Australia</a></li>
+                <li><a href="#">New Zealand</a></li>
+                <li><a href="#">Fiji</a></li>
+            </ul>
+        </li>
+        <li><a th:href="@{/contact}">Contact</a></li>
+        <li><a href="#">Language</a>
+            <ul>
+                <li><a href="#">English</a></li>
+                <li><a href="#">Russian</a></li>
+            </ul>
+        </li>
+        <li sec:authorize="hasAuthority('USER')"><a th:href="@{/profile}">Profile</a></li>
+        <li sec:authorize="hasAuthority('ADMIN')"><a href="#">Service</a>
+            <ul>
+                <li><a th:href="@{/list-of-countries}">Countries</a></li>
+                <li><a th:href="@{/list-of-users}">Users</a></li>
+            </ul>
+        </li>
+        <li sec:authorize="isAnonymous()"><a th:href="@{/login}">Sign in</a></li>
+        <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Logout</a></li>
+    </ul>
+</div>
+</body>
+</html>

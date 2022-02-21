@@ -1,0 +1,53 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+</head>
+<body>
+<div th:fragment="footer">
+    <footer>
+        <div class="basic-footer ptb-20">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-4">
+                        <div class="copyright mt-5">
+                            <p>2022 Designed by
+                                <a href="https://www.linkedin.com/in/aliaksandr-shtura/">Alexander Shtura</a></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <div class="social-icon text-center">
+                            <a href="https://www.facebook.com/aliaksandr.shtura/">
+                                <i class="ion-social-facebook"></i>
+                            </a>
+                            <a href="https://www.instagram.com/">
+                                <i class="ion-social-instagram"></i>
+                            </a>
+                            <a href="https://yandex.by/">
+                                <i class="ion-social-dribbble"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <div class="footer-mail text-right">
+                            <span>+ 375 (29) 870-00-03</span>
+                            <li><a th:href="@{/contact}">visaction@gmail.com</a></li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- All js plugins here -->
+    <script src="js/vendor/jquery-1.12.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.meanmenu.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+</div>
+</body>
+</html>

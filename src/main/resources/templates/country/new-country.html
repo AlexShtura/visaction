@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add new country</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css">
+</head>
+<body class="container">
+<div>
+    <h1 class="py-5">Add New Country</h1>
+    <div th:if="${countryExistsMessage}" th:utext="${countryExistsMessage}" class="alert alert-success text-center"></div>
+    <form method="post" th:action="@{/save-country}" th:object="${country}" class="col card p-3 mb-5">
+        <div class="form-group">
+            <label for="firstName">Name:</label>
+            <input id="firstName" placeholder="Enter Name" required type="text" th:field="*{nameCountry}"
+                   class="form-control"/>
+        </div>
+        <div class="form-group">
+            <label for="lastName">Prise:</label>
+            <input id="lastName" placeholder="Enter Prise" required type="text" th:field="*{priceCountry}"
+                   class="form-control"/>
+        </div>
+        <div class="form-group">
+            <label for="continent">Continent:</label>
+            <select id="continent" required th:field="*{continents}" class="form-control ">
+                <option value="" hidden>Select Continent</option>
+                <option th:each="continent : ${T(com.teachmeskills.visaction.model.Continent).values()}"
+                        th:value="${continent}"
+                        th:text="${continent}">
+                </option>
+            </select>
+        </div>
+        <div>
+            <input type="submit" class="btn btn-success col-lg-2" value="CREATE">
+            <input type="reset" class="btn btn-dark col-lg-2" value="RESET">
+        </div>
+    </form>
+</div>
+<div>
+<a th:href="@{/list-of-countries}">Back To List Of Countries</a>
+</div>
+</body>
+</html>

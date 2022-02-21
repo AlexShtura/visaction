@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+      lang="en">
+<head>
+    <div th:replace="fragments/header :: header-files"></div>
+</head>
+<body>
+<div th:replace="fragments/header :: header"></div>
+
+<!-- basic-breadcrumb start -->
+<div class="basic-breadcrumb-area gray-bg ptb-70">
+    <div class="container">
+        <div class="basic-breadcrumb text-center">
+            <h3 class="">403 Not Found</h3>
+            <ol class="breadcrumb text-xs">
+                <li><a th:href="@{/index}">Home</a></li>
+                <li class="active">403</li>
+            </ol>
+        </div>
+    </div>
+</div>
+<!-- basic-breadcrumb end -->
+
+<div class="404-area ptb-120">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2 text-center">
+                <div class="404-text">
+                    <h1>403</h1>
+                    <h2>This Page Could Not Be Found!</h2>
+                    <p class="lead">Just then her head struck against the roof of the hall: in fact she was now more
+                        than nine feet high, and she at once took up the little golden key and hurried off to the garden
+                        door.</p>
+                    <a th:href="@{/index}" class="btn btn-lg">Back Home ›</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

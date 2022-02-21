@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+      lang="en">
+<head>
+    <div th:replace="fragments/header :: header-files"></div>
+</head>
+<body>
+<div th:replace="fragments/header :: header"></div>
+<!-- basic-breadcrumb start -->
+<div class="basic-breadcrumb-area gray-bg ptb-20">
+    <div class="container">
+        <div class="basic-breadcrumb text-center">
+            <h3 class="">Sign up</h3>
+            <ol class="breadcrumb text-xs">
+                <li><a th:href="@{/index}">Home</a></li>
+                <li class="active">Sign up</li>
+            </ol>
+        </div>
+    </div>
+</div>
+<!--Test-->
+<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <p class="text-center text-muted">Sign up a new account or <a th:href="@{/login}">Sign in</a> to your
+                account.</p>
+            <hr>
+            <form th:action="@{/registration}" method="post" th:object="${user}">
+                <div class="row">
+                    <div class="col-lg-9">
+                        <label>Login <span class="text-danger">*</span></label>
+                        <input type="text" placeholder="Enter Login" class="form-control" th:field="*{username}"/>
+                    </div>
+                    <div class="col-lg-3">
+                        <label for="role">Role <span class="text-danger">*</span></label>
+                        <select id="role" required th:field="*{roles}" class="form-control ">
+                            <option th:each="role : ${T(com.teachmeskills.visaction.model.Role).values()}"
+                                    th:value="${role}"
+                                    th:text="${role}">
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="top-margin">
+                    <div class="form-group col-md-pull-12">
+                        <label>Password <span class="text-danger">*</span></label>
+                        <input type="password" placeholder="Enter Password" class="form-control" th:field="*{password}"/>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-lg-8">
+                        <b><a href=""></a></b>
+                    </div>
+                    <div class="col-lg-4 text-right">
+                        <button class="btn btn-action" type="submit">Sign Up</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="footer-login">
+<div th:replace="fragments/footer :: footer"></div>
+</div>
+</body>
+</html>

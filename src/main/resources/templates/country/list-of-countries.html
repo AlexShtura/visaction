@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+      lang="en">
+<head>
+    <div th:replace="fragments/header :: header-files"></div>
+</head>
+<body>
+<div th:replace="fragments/header :: header"></div>
+
+<!-- basic-breadcrumb start -->
+<div class="basic-breadcrumb-area gray-bg ptb-20">
+    <div class="container">
+        <div class="basic-breadcrumb text-center">
+            <h3 class="">List Of Countries</h3>
+            <ol class="breadcrumb text-xs">
+                <li><a th:href="@{/index}">Home</a></li>
+                <li class="active">Countries</li>
+            </ol>
+        </div>
+    </div>
+</div>
+<!-- basic-breadcrumb end -->
+<div class="container">
+    <br>
+    <div class="btn-group" role="group" aria-label="Basic example">
+        <a th:href="@{/list-of-countries/new-country}" class="btn btn-action" role="button">Add</a>
+    </div>
+    <br>
+    <br>
+    <!--<div th:if="${countryCreateMessage}" th:utext="${countryCreateMessage}" class="alert alert-success text-center" role="alert">
+        <a href="#" th:href="@{/list-of-countries}" class="btn btn-action" role="button"> OK</a>
+    </div>-->
+    <br>
+    <table class="table table-hover caption-top justify-content-center">
+        <thead>
+        <tr>
+            <th class="text-center" scope="col">ID</th>
+            <th class="text-center" scope="col">COUNTRY</th>
+            <th class="text-center" scope="col">PRISE</th>
+            <th class="text-center" scope="col">CONTINENT</th>
+            <th class="text-center" scope="col">CREATED AT</th>
+            <th class="text-center" scope="col">UPDATE AT</th>
+            <th class="text-center" scope="col">EDIT</th>
+        </tr>
+        <tr th:if="${#lists.isEmpty(countries)}">
+            <td class="text-center" colspan="7">No Records found. Add some...!</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="country : ${countries}">
+            <td th:text="${country.id}" class="text-center align-middle"></td>
+            <td th:text="${country.nameCountry}" class="text-center align-middle"></td>
+            <td th:text="${country.priceCountry}" class="text-center align-middle"></td>
+            <td th:text="${#strings.setJoin(country.continents, ',')}" class="text-center align-middle"></td>
+            <td th:text="${country.createdAt}" class="text-center align-middle"></td>
+            <td th:text="${country.updatedAt}" class="text-center align-middle"></td>
+            <td class="text-center align-middle" role="group" aria-label="Basic example">
+                <a th:href="@{'/list-of-countries/edit-country/' + ${country.id}}" class="btn btn-action"
+                   role="button">Edit</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+      lang="en">
+<head>
+    <div th:replace="fragments/header :: header-files"></div>
+</head>
+<body>
+<div th:replace="fragments/header :: header"></div>
+
+<!-- basic-breadcrumb start -->
+<div class="basic-breadcrumb-area gray-bg ptb-20">
+    <div class="container">
+        <div class="basic-breadcrumb text-center">
+            <h3 class="">Contact Us</h3>
+            <ol class="breadcrumb text-xs">
+                <li><a th:href="@{/index}">Home</a></li>
+                <li class="active">Contact</li>
+            </ol>
+        </div>
+    </div>
+</div>
+<!-- basic-breadcrumb end -->
+
+<!-- basic-contact-area -->
+<div class="basic-contact-area pt-40 pb-40">
+    <div class="container">
+        <div class="row multi-columns-row">
+            <div class="col-sm-4 col-md-4 col-lg-4 mb-20">
+                <div class="contact-person text-center">
+                    <Br>
+                    <h4>The address</h4>
+                    <p>Minsk, Mstislavets 12, pavilion 232</p>
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4 mb-20">
+                <div class="contact-person text-center">
+                    <Br>
+                    <h4>Phone</h4>
+                    <p>+ 375 (29) 870-00-03</p>
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4 mb-20">
+                <div class="contact-person text-center">
+                    <Br>
+                    <h4>E-mail</h4>
+                    <p>visaction@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- basic-contact-area end -->
+
+<div class="map-area">
+    <div class="container">
+        <div id="map"></div>
+    </div>
+</div>
+
+<!-- basic-team-area start -->
+<div class="basic-team-area gray-bg pt-120 pb-90">
+    <div class="container">
+        <div class="area-title text-center">
+            <h2>Our Team</h2>
+            <p>A person is closest to perfection in those moments when he fills out a questionnaire when applying for a
+                job.</p>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-md-3">
+                <div class="team-item">
+                    <div class="team-item-image">
+                        <img src="img/our_team/victor.jpg" alt="team member">
+                        <div class="team-item-detail">
+                            <h5 class="team-item-title">WHAT'S UP!</h5>
+                            <p>When will be the backend?</p>
+                            <div class="team-social-icon">
+                                <a href="#"><i class="ion-social-facebook"></i></a>
+                                <a href="#"><i class="ion-social-googleplus"></i></a>
+                                <a href="#"><i class="ion-social-instagram"></i></a>
+                                <a href="#"><i class="ion-social-dribbble"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 class="team-item-name">Viktor Telyatko</h4>
+                    <span class="team-item-role">Mentor</span>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <div class="team-item">
+                    <div class="team-item-image">
+                        <img src="img/our_team/alex.jpg" alt="team member">
+                        <div class="team-item-detail">
+                            <h5 class="team-item-title">WHAT'S UP!</h5>
+                            <p>How much has not been done yet, and how much still remains to be done ...</p>
+                            <div class="team-social-icon">
+                                <a href="#"><i class="ion-social-facebook"></i></a>
+                                <a href="#"><i class="ion-social-googleplus"></i></a>
+                                <a href="#"><i class="ion-social-instagram"></i></a>
+                                <a href="#"><i class="ion-social-dribbble"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 class="team-item-name">Alexander Shtura</h4>
+                    <span class="team-item-role">Developer</span>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <div class="team-item">
+                    <div class="team-item-image">
+                        <img src="img/our_team/maks.jpg" alt="team member">
+                        <div class="team-item-detail">
+                            <h5 class="team-item-title">WHAT'S UP!</h5>
+                            <p>It's hard being a middle manager. And morons above you and morons below you.</p>
+                            <div class="team-social-icon">
+                                <a href="#"><i class="ion-social-facebook"></i></a>
+                                <a href="#"><i class="ion-social-googleplus"></i></a>
+                                <a href="#"><i class="ion-social-instagram"></i></a>
+                                <a href="#"><i class="ion-social-dribbble"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 class="team-item-name">Maksim Kim</h4>
+                    <span class="team-item-role">Head Of Idea</span>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <div class="team-item">
+                    <div class="team-item-image">
+                        <img src="img/our_team/kirill.jpg" alt="team member">
+                        <div class="team-item-detail">
+                            <h5 class="team-item-title">WHAT'S UP!</h5>
+                            <p>Kanban board and sticky notes are my everything!</p>
+                            <div class="team-social-icon">
+                                <a href="#"><i class="ion-social-facebook"></i></a>
+                                <a href="#"><i class="ion-social-googleplus"></i></a>
+                                <a href="#"><i class="ion-social-instagram"></i></a>
+                                <a href="#"><i class="ion-social-dribbble"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 class="team-item-name">Kirill Golovin</h4>
+                    <span class="team-item-role">Scrum Master</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- basic-team-area end -->
+
+<div class="basic-contact-form ptb-90">
+    <div class="container">
+        <div class="area-title text-center">
+            <h2>Let’s talk</h2>
+            <p>If you decide to use our services, but you have any questions, you can ask them by phone or by e-mail. If
+                you have already used our services, tell us about your impressions by filling out the form below.
+                Providing high-quality services is our priority. We will be grateful for your letters, it is important
+                for us to know your opinion!</p>
+        </div>
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                <form id="contact-form" action="mail.php" method="post">
+                    <div class="row">
+                        <div class="col-md-6 form-group">
+                            <label class="sr-only">First Name</label>
+                            <input type="text" class="form-control input-lg" name="name" placeholder="First Name">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label class="sr-only">Email</label>
+                            <input type="email" class="form-control input-lg" name="email" placeholder="Email">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="col-md-12 form-group">
+                            <label class="sr-only">Subject</label>
+                            <input type="text" class="form-control input-lg" name="subject" placeholder="Subject">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="col-md-12 form-group">
+                            <textarea class="form-control input-lg" rows="7" name="message"
+                                      placeholder="Message"></textarea>
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="col-md-12 text-center">
+                            <button type="submit" class="btn btn-lg btn-round btn-dark">Send Email</button>
+                        </div>
+
+                    </div>
+                </form>
+
+                <div class="ajax-response text-center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:replace="fragments/footer :: footer"></div>
+
+
+<!-- js plugins map -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBceNl50o3BU6LrsIGJxSL9tKKvqBKIeVs"></script>
+<script>
+    // When the window has finished loading create our google map below
+    google.maps.event.addDomListener(window, 'load', init);
+
+    function init() {
+        // Basic options for a simple Google Map
+        // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+        var mapOptions = {
+            // How zoomed in you want the map to start at (always required)
+            zoom: 11,
+
+            scrollwheel: false,
+
+            // The latitude and longitude to center the map (always required)
+            center: new google.maps.LatLng(53.931429, 27.650162), // Minsk
+
+            // How you would like to style the map.
+            // This is where you would paste any style found on Snazzy Maps.
+            styles: [{
+                "featureType": "water",
+                "elementType": "geometry",
+                "stylers": [{"color": "#e9e9e9"}, {"lightness": 17}]
+            }, {
+                "featureType": "landscape",
+                "elementType": "geometry",
+                "stylers": [{"color": "#f5f5f5"}, {"lightness": 20}]
+            }, {
+                "featureType": "road.highway",
+                "elementType": "geometry.fill",
+                "stylers": [{"color": "#ffffff"}, {"lightness": 17}]
+            }, {
+                "featureType": "road.highway",
+                "elementType": "geometry.stroke",
+                "stylers": [{"color": "#ffffff"}, {"lightness": 29}, {"weight": 0.2}]
+            }, {
+                "featureType": "road.arterial",
+                "elementType": "geometry",
+                "stylers": [{"color": "#ffffff"}, {"lightness": 18}]
+            }, {
+                "featureType": "road.local",
+                "elementType": "geometry",
+                "stylers": [{"color": "#ffffff"}, {"lightness": 16}]
+            }, {
+                "featureType": "poi",
+                "elementType": "geometry",
+                "stylers": [{"color": "#f5f5f5"}, {"lightness": 21}]
+            }, {
+                "featureType": "poi.park",
+                "elementType": "geometry",
+                "stylers": [{"color": "#dedede"}, {"lightness": 21}]
+            }, {
+                "elementType": "labels.text.stroke",
+                "stylers": [{"visibility": "on"}, {"color": "#ffffff"}, {"lightness": 16}]
+            }, {
+                "elementType": "labels.text.fill",
+                "stylers": [{"saturation": 36}, {"color": "#333333"}, {"lightness": 40}]
+            }, {"elementType": "labels.icon", "stylers": [{"visibility": "off"}]}, {
+                "featureType": "transit",
+                "elementType": "geometry",
+                "stylers": [{"color": "#f2f2f2"}, {"lightness": 19}]
+            }, {
+                "featureType": "administrative",
+                "elementType": "geometry.fill",
+                "stylers": [{"color": "#fefefe"}, {"lightness": 20}]
+            }, {
+                "featureType": "administrative",
+                "elementType": "geometry.stroke",
+                "stylers": [{"color": "#fefefe"}, {"lightness": 17}, {"weight": 1.2}]
+            }]
+        };
+
+        // Get the HTML DOM element that will contain your map
+        // We are using a div with id="map" seen below in the <body>
+        var mapElement = document.getElementById('map');
+
+        // Create the Google Map using our element and options defined above
+        var map = new google.maps.Map(mapElement, mapOptions);
+
+        // Let's also add a marker while we're at it
+        var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(53.931429, 27.650162),
+            map: map,
+            title: 'Snazzy!'
+        });
+    }
+</script>
+</body>
+</html>
