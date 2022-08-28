@@ -1,4 +1,4 @@
-/*package com.teachmeskills.visaction.controller;
+package com.teachmeskills.visaction.controller;
 
 import com.teachmeskills.visaction.model.Role;
 import com.teachmeskills.visaction.model.User;
@@ -23,8 +23,11 @@ public class UserController {
     }
 
     @GetMapping
-    public ModelAndView userList(ModelAndView modelAndView) {
-        modelAndView.addObject("users", userService.findAll());
+    public ModelAndView profile(@PathVariable Long id, ModelAndView modelAndView) {
+        modelAndView.addObject("users", userService.findById(id));
+        modelAndView.addObject("roles", Role.values());
+        modelAndView.addObject("orders", Role.values());
+        modelAndView.addObject("roles", Role.values());
         modelAndView.setViewName("user/profile");
         return modelAndView;
     }
@@ -43,4 +46,4 @@ public class UserController {
         redirectView.setUrl("/profile");
         return redirectView;
     }
-}*/
+}

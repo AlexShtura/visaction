@@ -2,7 +2,7 @@ package com.teachmeskills.visaction.model;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -17,6 +17,8 @@ public class Country {
     @CollectionTable(name = "country_continent", joinColumns = @JoinColumn(name = "country_id"))
     @Enumerated(EnumType.STRING)
     private Set<Continent> continents;
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "country", cascade = CascadeType.ALL)
+    private Set<Order> orders = new HashSet<>();
     private boolean active = true;
     private LocalDateTime createdAt = LocalDateTime.now();
     private LocalDateTime updatedAt = LocalDateTime.now();
@@ -51,6 +53,14 @@ public class Country {
 
     public void setContinents(Set<Continent> continents) {
         this.continents = continents;
+    }
+
+    public Set<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(Set<Order> orders) {
+        this.orders = orders;
     }
 
     public boolean isActive() {

@@ -4,10 +4,12 @@ import com.teachmeskills.visaction.model.Role;
 import com.teachmeskills.visaction.model.User;
 import com.teachmeskills.visaction.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 
 @Controller
@@ -38,11 +40,12 @@ public class AdminController {
         return modelAndView;
     }
 
-
-    @PostMapping("/list-of-users")
-    public RedirectView save(@ModelAttribute User user, RedirectView redirectView) {
-        userService.save(user);
-        redirectView.setUrl("/list-of-users");
+    @PostMapping("/list-of-users/edit-user/{id}")
+    public RedirectView updateUser(RedirectAttributes redirectAttributes, @PathVariable("id") Long id, @ModelAttribute User user) {
+        userService.updateUser(id, user);
+        String message = (user.isActive() ? "Updated " : "Deleted ") + " user <b>" + user.getFirstName() + " " + user.getLastName() + "</b>.";
+        RedirectView redirectView = new RedirectView("/list-of-users", true);
+        redirectAttributes.addFlashAttribute("userMessage", message);
         return redirectView;
     }
 }

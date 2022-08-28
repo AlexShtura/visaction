@@ -1,73 +1,76 @@
-<!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org"
-      lang="en">
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
-    <link rel="stylesheet" href="http://localhost:9090/webjars/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit User</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css">
 </head>
-<body>
-<div class="container">
-    <form th:action="@{/list-of-users}" method="post" th:object="${user}">
-        <input type="hidden" th:field="*{id}" th:value="${user.id}">
-        <input type="hidden" th:field="*{password}" th:value="${user.password}">
-        <div>
-            <label>
-                First Name:
-                <input type="text" th:field="*{firstName}" th:value="${user.firstName}">
-            </label>
+<body class="container">
+<div>
+    <h1 class="py-5">Edit User</h1>
+    <form method="post" th:action="'/list-of-users/edit-user/' + ${user.id}" th:object="${user}"
+          class="col card p-3 mb-5">
+        <div class="form-group">
+            <label for="firstName">First Name:</label>
+            <input id="firstName" placeholder="Enter First Name" th:field="*{firstName}"
+                   class="form-control" type="text"/>
         </div>
-        <div>
-            <label>
-                Last Name:
-                <input type="text" th:field="*{lastName}" th:value="${user.lastName}">
-            </label>
+        <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input id="lastName" placeholder="Enter Last Name" required th:field="*{lastName}"
+                   class="form-control" type="text"/>
         </div>
-        <div>
-            <label>
-                Mobile:
-                <input type="text" th:field="*{mobileNumber}" th:value="${user.mobileNumber}">
-            </label>
+        <div class="form-group">
+            <label for="mobile">Mobile:</label>
+            <input id="mobile" placeholder="Enter Mobile" required th:field="*{mobileNumber}"
+                   class="form-control" type="text"/>
         </div>
-        <div>
-            <label>
-                Email:
-                <input type="text" th:field="*{email}" th:value="${user.email}">
-            </label>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input id="email" placeholder="Enter Email" required th:field="*{email}"
+                   class="form-control" type="text"/>
         </div>
-        <div>
-            <label>
-                Age:
-                <input type="text" th:field="*{age}" th:value="${user.age}">
-            </label>
+        <div class="form-group">
+            <label for="age">Age:</label>
+            <input id="age" placeholder="Enter Age" required th:field="*{age}"
+                   class="form-control" type="text"/>
         </div>
-        <div>
-            <label>Sexes:
-                <input type="checkbox" name="sexes"
-                       th:each="sex : ${T(com.teachmeskills.visaction.model.Sex).values()}"
-                       th:text="${sex}"
-                       th:value="${sex.name}"
-                       th:field="*{sexes}"
-                />
-            </label>
+        <div class="form-group">
+            <label for="sex">Sex:</label>
+            <select id="sex" name="sexes" class="form-control">
+                <option th:each="sex : ${T(com.teachmeskills.visaction.model.Sex).values()}"
+                        th:text="${sex}"
+                        th:value="${sex.name}"
+                        required th:field="*{sexes}"></option>
+            </select>
         </div>
-        <div>
-            <label>Roles:
-                <input type="checkbox" name="roles" th:checked="${user.roles.contains(role)}"
-                       th:each="role : ${roles}"
-                       th:text="${role}"
-                       th:value="${role.name}"
-                       th:field="*{roles}"
-                />
-            </label>
+        <div class="form-group">
+            <label for="login">Login:</label>
+            <input id="login" placeholder="Enter Login" required th:field="*{username}"
+                   class="form-control" type="text"/>
         </div>
-        <div>
-            <label>isActive:
-                <input type="checkbox" th:field="*{active}" th:checked="${user.active}"/>
-            </label>
+        <div class="form-group">
+            <label for="role">Role:</label>
+            <select id="role" name="roles" class="form-control">
+                <option th:each="role : ${T(com.teachmeskills.visaction.model.Role).values()}"
+                        th:text="${role}"
+                        th:value="${role.name}"
+                        required th:field="*{roles}"></option>
+            </select>
         </div>
-
-        <button type="submit">Edit</button>
+        <input id="activeFlag" type="hidden" th:field="*{active}" value='true'>
+        <div>
+            <input type="submit" class="btn btn-success col-lg-2" value="UPDATE"
+                   onclick="document.getElementById('activeFlag').value='true'">
+            <input type="submit" class="btn btn-danger col-lg-2" value="DELETE"
+                   onclick="document.getElementById('activeFlag').value='false'">
+            <input type="reset" class="btn btn-dark col-lg-2" value="RESET">
+            <a th:href="@{/list-of-users}" role="button" class="btn btn-link col-lg-2.5">Back To List Of Users</a>
+        </div>
     </form>
 </div>
-
 </body>
 </html>

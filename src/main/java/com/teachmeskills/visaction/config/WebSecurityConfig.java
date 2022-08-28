@@ -37,11 +37,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/", "/index", "/about", "/contact",
+                .antMatchers("/", "/index", "/about", "/contact", "/new-message",
+                        "/europe", "/asia", "/america", "/africa", "/oceania",
                         "/registration",
                         "/profile",
-                        "/list-of-users", "/edit-user", "/list-of-users/{Id}",
-                        "/list-of-countries", "/new-country", "/edit-country", "/delete-country").permitAll()
+                        "/list-of-users", "/edit-user", "/list-of-users/{Id}", "/update-user",
+                        "/list-of-countries", "/new-country", "/edit-country",
+                        "/update-country", "/delete-country").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()

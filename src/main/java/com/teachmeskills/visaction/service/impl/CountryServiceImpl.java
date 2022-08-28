@@ -43,14 +43,8 @@ public class CountryServiceImpl implements CountryService {
         countryFromDb.setNameCountry(request.getNameCountry());
         countryFromDb.setPriceCountry(request.getPriceCountry());
         countryFromDb.setContinents(request.getContinents());
-        countryFromDb.setActive(request.isActive());
         countryFromDb.setUpdatedAt(LocalDateTime.now());
         return countryRepo.save(countryFromDb);
-    }
-
-    @Override
-    public void deleteCountry(Long id) {
-        countryRepo.deleteById(id);
     }
 }
 

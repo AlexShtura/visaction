@@ -61,15 +61,13 @@ public class CountryController {
         return modelAndView;
     }
 
-    @RequestMapping(path = "update-country", method = RequestMethod.POST)
-    public RedirectView updateUser(RedirectAttributes redirectAttributes, @PathVariable("id") Long id, @ModelAttribute Country country) {
+    @PostMapping("/update-country")
+    public RedirectView updateCountry(RedirectAttributes redirectAttributes, @PathVariable("id") Long id, @ModelAttribute Country country){
         countryService.updateCountry(id, country);
-        String message = (country.isActive() ? "Updated " : "Deleted ") + " country <b>" + country.getNameCountry() + "</b>.";
-        RedirectView redirectView = new RedirectView("/", true);
-        redirectAttributes.addFlashAttribute("userMessage", message);
+        String message=(country.isActive()?"Updated ":"Deleted ")+" user <b>"+country.getNameCountry()+"</b>.";
+        RedirectView redirectView=new RedirectView("/list-of-countries",true);
+        redirectAttributes.addFlashAttribute("countryMessage", message);
         return redirectView;
     }
-
-
 
 }

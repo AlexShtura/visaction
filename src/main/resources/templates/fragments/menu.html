@@ -7,38 +7,11 @@
 <body>
 <div th:fragment="menu">
     <ul class="basic-menu clearfix">
-        <li><a href="#">Europe</a>
-            <ul>
-                <li><a href="#">Italy and Holy See</a></li>
-                <li><a href="#">Spain</a></li>
-            </ul>
-        </li>
-        <li><a href="#">Asia</a>
-            <ul>
-                <li><a href="#">Vietnam</a></li>
-                <li><a href="#">India</a></li>
-            </ul>
-        </li>
-        <li><a href="#">America</a>
-            <ul>
-                <li><a href="#">Canada</a></li>
-                <li><a href="#">USA</a></li>
-            </ul>
-        </li>
-        <li><a href="#">Africa</a>
-            <ul>
-                <li><a href="#">Egypt</a></li>
-                <li><a href="#">Morocco</a></li>
-                <li><a href="#">South Africa</a></li>
-            </ul>
-        </li>
-        <li><a href="#">Oceania</a>
-            <ul>
-                <li><a href="#">Australia</a></li>
-                <li><a href="#">New Zealand</a></li>
-                <li><a href="#">Fiji</a></li>
-            </ul>
-        </li>
+        <li><a th:href="@{/europe}">Europe</a></li>
+        <li><a th:href="@{/asia}">Asia</a></li>
+        <li><a th:href="@{/america}">America</a></li>
+        <li><a th:href="@{/africa}">Africa</a></li>
+        <li><a th:href="@{/oceania}">Oceania</a></li>
         <li><a th:href="@{/contact}">Contact</a></li>
         <li><a href="#">Language</a>
             <ul>

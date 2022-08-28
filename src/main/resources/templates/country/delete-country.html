@@ -1,10 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+            name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>Edit Country</title>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css"
+          rel="stylesheet">
 </head>
-<body>
-
+<body class="container">
+<form class="col card p-3 my-5" method="post" th:action="@{/delete-country}" th:object="${country}">
+    <div class="form-group">
+        <label for="nameCountry">Name</label>
+        <input class="form-control" id="nameCountry" th:field="*{nameCountry}" th:value="${country.nameCountry}"
+               type="text"/>
+    </div>
+    <div class="form-group">
+        <label for="priseCountry">Prise</label>
+        <input class="form-control" id="priseCountry" th:field="*{priceCountry}" th:value="${country.priceCountry}"
+               type="text"/>
+    </div>
+    <div>
+        <input class="btn btn-success" type="submit" value="UPDATE">
+    </div>
+</form>
+<div>
+    <a th:href="@{/list-of-countries}">Back To List Of Countries</a>
+</div>
+<!--<input class="btn btn-danger" type="submit" value="Delete"
+       onclick="document.getElementById('activeFlag').value='false'">-->
 </body>
 </html>

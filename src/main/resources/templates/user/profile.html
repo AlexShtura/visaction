@@ -65,6 +65,45 @@
     </div>
 
 </div>
+<div class="container">
+    <table class="table table-hover caption-top justify-content-center">
+        <thead>
+        <tr>
+            <th class="text-center" scope="col">ID</th>
+            <th class="text-center" scope="col">FIRST NAME</th>
+            <th class="text-center" scope="col">LAST NAME</th>
+            <th class="text-center" scope="col">MOBILE</th>
+            <th class="text-center" scope="col">EMAIL</th>
+            <th class="text-center" scope="col">AGE</th>
+            <th class="text-center" scope="col">SEX</th>
+            <th class="text-center" scope="col">LOGIN</th>
+            <th class="text-center" scope="col">ROLE</th>
+            <th class="text-center" scope="col">CREATE AT</th>
+            <th class="text-center" scope="col">UPDATE AT</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="user : ${users}">
+            <td th:text="${user.id}" class="text-center align-middle"></td>
+            <td th:text="${user.firstName}" class="text-center align-middle"></td>
+            <td th:text="${user.lastName}" class="text-center align-middle"></td>
+            <td th:text="${user.mobileNumber}" class="text-center align-middle"></td>
+            <td th:text="${user.email}" class="text-center align-middle"></td>
+            <td th:text="${user.age}" class="text-center align-middle"></td>
+            <td th:text="${#strings.setJoin(user.sexes, ',')}" class="text-center align-middle"></td>
+            <td th:text="${user.username}" class="text-center align-middle"></td>
+            <td th:text="${#strings.setJoin(user.roles, ',')}" class="text-center align-middle"></td>
+            <td th:text="${user.createdUserAt}" class="text-center align-middle"></td>
+            <td th:text="${user.updatedUserAt}" class="text-center align-middle"></td>
+            <td class="text-center align-middle">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <a th:href="@{'/list-of-users/edit-user/' + ${user.id}}" class="btn btn-primary" role="button">Edit</a>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 
 <div th:replace="fragments/footer :: footer"></div>
 </body>

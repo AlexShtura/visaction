@@ -157,42 +157,19 @@
                 you have already used our services, tell us about your impressions by filling out the form below.
                 Providing high-quality services is our priority. We will be grateful for your letters, it is important
                 for us to know your opinion!</p>
+            <p sec:authorize="isAnonymous()">To display the feedback form, you need to go through the registration
+                stage!</p>
         </div>
-        <div class="row">
+        <div class="row" >
             <div class="col-sm-8 col-sm-offset-2">
-                <form id="contact-form" action="mail.php" method="post">
-                    <div class="row">
-                        <div class="col-md-6 form-group">
-                            <label class="sr-only">First Name</label>
-                            <input type="text" class="form-control input-lg" name="name" placeholder="First Name">
-                            <p class="help-block text-danger"></p>
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label class="sr-only">Email</label>
-                            <input type="email" class="form-control input-lg" name="email" placeholder="Email">
-                            <p class="help-block text-danger"></p>
-                        </div>
-                        <div class="col-md-12 form-group">
-                            <label class="sr-only">Subject</label>
-                            <input type="text" class="form-control input-lg" name="subject" placeholder="Subject">
-                            <p class="help-block text-danger"></p>
-                        </div>
-                        <div class="col-md-12 form-group">
-                            <textarea class="form-control input-lg" rows="7" name="message"
-                                      placeholder="Message"></textarea>
-                            <p class="help-block text-danger"></p>
-                        </div>
-                        <div class="col-md-12 text-center">
-                            <button type="submit" class="btn btn-lg btn-round btn-dark">Send Email</button>
-                        </div>
-
-                    </div>
-                </form>
-
-                <div class="ajax-response text-center"></div>
+                <div class="col-md-12 text-center" sec:authorize="isAuthenticated()">
+                    <a th:href="@{/contact/new-message}" class="btn btn-action" role="button">Add</a>
+                </div>
             </div>
+            <div class="ajax-response text-center"></div>
         </div>
     </div>
+</div>
 </div>
 
 <div th:replace="fragments/footer :: footer"></div>
