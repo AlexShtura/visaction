@@ -579,16 +579,16 @@ nav.nav-menu-show {
 	margin-top: 15px;
 }
 .dot {
-  background: #444 none repeat scroll 0 0;
+  background: #000000 none repeat scroll 0 0;
   display: inline-block;
   height: 5px;
   width: 5px;
 }
 .slider-content.text-VALUKA h2 {
-  color: #e0e0e0;
+  color: #000000;
 }
 .slider-content.text-VALUKA p {
-  color: #fff;
+  color: #000000;
 }
 .slider-content.black-bg-opacity {
   background: rgba(0, 0, 0, 0.7) none repeat scroll 0 0;
@@ -657,7 +657,7 @@ z-index: 1;}
 }
 .single-slider {
 	background: rgba(0, 0, 0, 0) none repeat scroll center center / cover;
-	padding: 250px 0;
+	padding: 10px 0;
 }
 .border-t-b{border-top:1px solid #f5f5f5;border-bottom:1px solid #f5f5f5}
 .slider-screen {
@@ -1144,7 +1144,7 @@ position: relative;}
 .meta-info ul li {
   color: #999;
   display: inline-block;
-  font-size: 11px;
+  font-size: 18px;
   padding: 0 12px;
   position: relative;
 }
@@ -1271,7 +1271,7 @@ position: relative;}
 	text-indent: 0;
 	text-transform: uppercase;
 }
-.sidebar-blog .widget{margin-bottom:35px;}
+.sidebar-blog .widget{margin-bottom:25px;}
 .sidebar-blog .widget:last-child{margin-bottom:0;}
 .widget-social{}
 .widget-social a {
@@ -1279,13 +1279,14 @@ position: relative;}
   color: #fff;
   display: inline-block;
   font-size: 19px;
-  height: 45px;
-  line-height: 45px;
+  height: 25px;
+  line-height: 25px;
   margin-right: 12px;
   text-align: center;
-  width: 45px;
+  width: 25px;
 }
-.widget-social a.facebook{background:#3b5998 }
+.widget-social a.facebook{background: #000000
+}
 .widget-social a.twitter{background:#1da1f2 }
 .widget-social a.instagram{background:#dd4b39 }
 .widget-social a.googleplus{background:#dd4b39 }
@@ -1483,6 +1484,8 @@ position: relative;}
 .comment, .comment-content {
   position: relative;
 }
+
+
 .comment-avatar {
   float: left;
   margin: 5px 0 0;
