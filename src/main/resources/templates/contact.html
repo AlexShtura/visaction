@@ -29,21 +29,21 @@
                 <div class="contact-person text-center">
                     <Br>
                     <h4>The address</h4>
-                    <p>Minsk, Mstislavets 12, pavilion 232</p>
+                    <p>Gdansk Metropolitan Area, Poland</p>
                 </div>
             </div>
             <div class="col-sm-4 col-md-4 col-lg-4 mb-20">
                 <div class="contact-person text-center">
                     <Br>
                     <h4>Phone</h4>
-                    <p>+ 375 (29) 870-00-03</p>
+                    <p>+48 500 522 765</p>
                 </div>
             </div>
             <div class="col-sm-4 col-md-4 col-lg-4 mb-20">
                 <div class="contact-person text-center">
                     <Br>
                     <h4>E-mail</h4>
-                    <p>visaction@gmail.com</p>
+                    <p>alex.shtura@gmail.com</p>
                 </div>
             </div>
         </div>
@@ -74,12 +74,12 @@
                         <div class="team-item-detail">
                             <h5 class="team-item-title">WHAT'S UP!</h5>
                             <p>When will be the backend?</p>
-                            <div class="team-social-icon">
+                            <!--<div class="team-social-icon">
                                 <a href="#"><i class="ion-social-facebook"></i></a>
                                 <a href="#"><i class="ion-social-googleplus"></i></a>
                                 <a href="#"><i class="ion-social-instagram"></i></a>
                                 <a href="#"><i class="ion-social-dribbble"></i></a>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
                     <h4 class="team-item-name">Viktor Telyatko</h4>
@@ -93,16 +93,16 @@
                         <div class="team-item-detail">
                             <h5 class="team-item-title">WHAT'S UP!</h5>
                             <p>How much has not been done yet, and how much still remains to be done ...</p>
-                            <div class="team-social-icon">
+                            <!--<div class="team-social-icon">
                                 <a href="#"><i class="ion-social-facebook"></i></a>
                                 <a href="#"><i class="ion-social-googleplus"></i></a>
                                 <a href="#"><i class="ion-social-instagram"></i></a>
                                 <a href="#"><i class="ion-social-dribbble"></i></a>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
                     <h4 class="team-item-name">Alexander Shtura</h4>
-                    <span class="team-item-role">Developer</span>
+                    <span class="team-item-role">DevOps|Developer</span>
                 </div>
             </div>
             <div class="col-sm-6 col-md-3">
@@ -112,12 +112,12 @@
                         <div class="team-item-detail">
                             <h5 class="team-item-title">WHAT'S UP!</h5>
                             <p>It's hard being a middle manager. And morons above you and morons below you.</p>
-                            <div class="team-social-icon">
+                            <!--<div class="team-social-icon">
                                 <a href="#"><i class="ion-social-facebook"></i></a>
                                 <a href="#"><i class="ion-social-googleplus"></i></a>
                                 <a href="#"><i class="ion-social-instagram"></i></a>
                                 <a href="#"><i class="ion-social-dribbble"></i></a>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
                     <h4 class="team-item-name">Maksim Kim</h4>
@@ -131,12 +131,12 @@
                         <div class="team-item-detail">
                             <h5 class="team-item-title">WHAT'S UP!</h5>
                             <p>Kanban board and sticky notes are my everything!</p>
-                            <div class="team-social-icon">
+                            <!--<div class="team-social-icon">
                                 <a href="#"><i class="ion-social-facebook"></i></a>
                                 <a href="#"><i class="ion-social-googleplus"></i></a>
                                 <a href="#"><i class="ion-social-instagram"></i></a>
                                 <a href="#"><i class="ion-social-dribbble"></i></a>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
                     <h4 class="team-item-name">Kirill Golovin</h4>
@@ -153,12 +153,16 @@
     <div class="container">
         <div class="area-title text-center">
             <h2>Let’s talk</h2>
-            <p>If you decide to use our services, but you have any questions, you can ask them by phone or by e-mail. If
+            <!--<p>If you decide to use our services, but you have any questions, you can ask them by phone or by e-mail. If
                 you have already used our services, tell us about your impressions by filling out the form below.
                 Providing high-quality services is our priority. We will be grateful for your letters, it is important
-                for us to know your opinion!</p>
-            <p sec:authorize="isAnonymous()">To display the feedback form, you need to go through the registration
-                stage!</p>
+                for us to know your opinion!</p>-->
+            <p>If you have any questions or would like to further discuss my qualifications, please do
+                not hesitate to contact me, you can ask them by phone or by email. Thank you for your
+                time and consideration.</p>
+            <p sec:authorize="isAuthenticated()">You can also leave a message on this site!</p>
+            <p sec:authorize="isAnonymous()">If you also want to leave a message on this site, you need
+                to go through the registration stage!</p>
         </div>
         <div class="row" >
             <div class="col-sm-8 col-sm-offset-2">
@@ -191,7 +195,7 @@
             scrollwheel: false,
 
             // The latitude and longitude to center the map (always required)
-            center: new google.maps.LatLng(53.931429, 27.650162), // Minsk
+            center: new google.maps.LatLng(54.476149, 18.517746), // Gdynia
 
             // How you would like to style the map.
             // This is where you would paste any style found on Snazzy Maps.
@@ -257,7 +261,7 @@
 
         // Let's also add a marker while we're at it
         var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(53.931429, 27.650162),
+            position: new google.maps.LatLng(54.476149, 18.517746),
             map: map,
             title: 'Snazzy!'
         });

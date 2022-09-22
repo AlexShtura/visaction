@@ -572,7 +572,7 @@ nav.nav-menu-show {
 }
 .slider-content.hero-text.text-VALUKA span::before{background:#fff}
 .slider-content > p {
-	color: #444;
+	color: rgba(255, 255, 255, 0.76);
 	font-size: 20px;
 	margin: 25px 0;
 	text-transform: capitalize;
@@ -657,7 +657,7 @@ z-index: 1;}
 }
 .single-slider {
 	background: rgba(0, 0, 0, 0) none repeat scroll center center / cover;
-	padding: 10px 0;
+	padding: 0px 0;
 }
 .border-t-b{border-top:1px solid #f5f5f5;border-bottom:1px solid #f5f5f5}
 .slider-screen {
@@ -946,7 +946,7 @@ border-top: 1px solid #f5f5f5;}
 	text-align: center;
 }
 .area-title {
-  margin: 0 auto 60px;
+  margin: 0 auto 20px;
   width: 60%;
 }
 .area-title h2 {

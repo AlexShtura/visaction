@@ -13,13 +13,13 @@
         <li><a th:href="@{/africa}">Africa</a></li>
         <li><a th:href="@{/oceania}">Oceania</a></li>
         <li><a th:href="@{/contact}">Contact</a></li>
-        <li><a href="#">Language</a>
+        <!--<li><a href="#">Language</a>
             <ul>
                 <li><a href="#">English</a></li>
                 <li><a href="#">Russian</a></li>
             </ul>
-        </li>
-        <li sec:authorize="hasAuthority('USER')"><a th:href="@{/profile}">Profile</a></li>
+        </li>-->
+        <li sec:authorize="hasAuthority('USER')"><a th:href="@{/about}">Profile</a></li>
         <li sec:authorize="hasAuthority('ADMIN')"><a href="#">Service</a>
             <ul>
                 <li><a th:href="@{/list-of-countries}">Countries</a></li>

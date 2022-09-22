@@ -36,8 +36,8 @@
                         <label for="role">Role <span class="text-danger">*</span></label>
                         <select id="role" required th:field="*{roles}" class="form-control ">
                             <option th:each="role : ${T(com.teachmeskills.visaction.model.Role).values()}"
-                                    th:value="${role}"
-                                    th:text="${role}">
+                                    th:value="${role.USER}"
+                                    th:text="${role.USER}">
                             </option>
                         </select>
                     </div>
